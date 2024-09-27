@@ -76,9 +76,13 @@ executable = true
 stripComponents = 1
 path = "aactivator.py"
 
+
+# TODO: make this works for windows too
+{{ if ne .chezmoi.os "windows" }}
 [".local/bin/oh-my-posh"]
 type = "file"
-url = {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" (printf `posh-%s-%s` .chezmoi.os .chezmoi.arch) | quote }}
+url = {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" (printf "posh-%s-%s" .chezmoi.os .chezmoi.arch) | quote }}
 refreshPeriod = "168h"
 exact = true
 executable = true
+{{ end }}
