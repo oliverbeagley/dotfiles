@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+sudo chsh --shell /usr/bin/zsh '{{ .chezmoi.username }}'

@@ -1,0 +1,4 @@
+zshPlugins = [
+    "git",
+    "zsh-syntax-highlighting",
+]

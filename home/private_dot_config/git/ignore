@@ -1,0 +1,5 @@
+.vscode
+
+# aactivator scripts
+.activate.sh
+.deactivate.sh

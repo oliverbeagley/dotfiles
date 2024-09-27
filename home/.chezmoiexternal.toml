@@ -1,0 +1,84 @@
+[".oh-my-zsh"]
+type = "archive"
+url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
+exclude = [
+    "*/.*",
+    "*/templates",
+]
+
+[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+type = "archive"
+url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
+exclude = [
+    "*/.editorconfig",
+    "*/.gitattributes",
+    "*/.github",
+    "*/.gitignore",
+]
+
+[".local/bin/eza"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "eza-community/eza" "eza_x86_64-unknown-linux-gnu.tar.gz" | quote }}
+refreshPeriod = "168h"
+executable = true
+path = "./eza"
+
+
+{{- $fontDir := "" }}
+{{- if eq .chezmoi.os "linux" }}
+{{-   $fontDir = ".local/share/fonts" }}
+{{- else if eq .chezmoi.os "windows" }}
+{{-   $fontDir = ".cache/chezmoi/fonts" }}
+{{- end }}
+
+{{- $fontName := "FiraCodeNerdFontMono" }}
+{{- range (list
+        "Bold"
+        "Light"
+        "Medium"
+        "Regular"
+        "SemiBold") }}
+["{{ $fontDir }}/{{ $fontName }}-{{ . }}.ttf"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "ryanoasis/nerd-fonts" "FiraCode.tar.xz" | quote }}
+refreshPeriod = "168h"
+path = "{{ $fontName }}-{{ . }}.ttf"
+{{- end }}
+
+
+[".local/bin/uv"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "astral-sh/uv" "uv-x86_64-unknown-linux-gnu.tar.gz" | quote }}
+refreshPeriod = "168h"
+stripComponents = 1
+path = "uv"
+
+[".local/bin/uvx"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "astral-sh/uv" "uv-x86_64-unknown-linux-gnu.tar.gz" | quote }}
+refreshPeriod = "168h"
+stripComponents = 1
+path = "uvx"
+
+
+[".local/bin/aactivator"]
+type = "archive-file"
+url = "https://github.com/Yelp/aactivator/archive/master.tar.gz"
+refreshPeriod = "168h"
+exact = true
+executable = true
+stripComponents = 1
+path = "aactivator.py"
+
+[".local/bin/oh-my-posh"]
+type = "file"
+url = {{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" (printf "posh-%s-%s" .chezmoi.os .chezmoi.arch) | quote }}
+refreshPeriod = "168h"
+exact = true
+executable = true

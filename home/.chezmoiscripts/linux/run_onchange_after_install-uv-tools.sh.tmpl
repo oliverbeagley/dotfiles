@@ -1,0 +1,16 @@
+#! /bin/bash
+
+set -eufo pipefail
+
+
+{{ $tools := list
+    "pre-commit"
+    "ruff"
+    "thefuck"
+    "hatch" -}}
+
+{{- range $tools }}
+
+uv tool install {{ . }}
+
+{{- end }}

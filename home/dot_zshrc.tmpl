@@ -1,35 +1,43 @@
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="agnoster"
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
 
 export PATH="$PATH:/home/olly/.local/bin"
+export EDITOR=vim
 
-plugins=(git kubectl thefuck dotenv terraform)
+export ZSH="$HOME/.oh-my-zsh"
+
+plugins=(
+{{- range .zshPlugins }}
+  {{ . }}
+{{- end }}
+)
 
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.cargo/env"
 
-alias exa='eza --icons'
-alias exal='eza --long --git'
+# this must be after omz
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+
+alias ezal='eza --long --git'
 alias R='R --no-save'
 alias bat="batcat"
 
-export EDITOR=vim
 export BAT_THEME="Solarized (dark)"
 # otherwise `fuck` is slow on wsl
 export THEFUCK_EXCLUDED_SEARCH_PATH_PREFIXES=/mnt/
+# Because ripgrep doesn't look for config in the proper place
+export RIPGREP_CONFIG_PATH=${XDG_CONFIG_HOME}/ripgrep/config
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
-
+# azure cli only provide bash completions
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
 
-
+#
 eval "$(aactivator init)"
-
 
 fif() {
   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for"; return 1; fi

@@ -1,0 +1,32 @@
+#! /bin/bash
+set -eufo pipefail
+
+{{ $packages := list
+    "bat"
+    "curl"
+    "fzf"
+    "git"
+    "jq"
+    "ripgrep"
+    "zsh" -}}
+
+
+sudo add-apt-repository --yes --no-update ppa:git-core/ppa
+sudo add-apt-repository --yes --no-update ppa:deadsnakes/ppa
+
+sudo apt-get update
+sudo apt-get install --yes --no-install-recommends {{ $packages | join " " }}
+
+
+{{ $pythonVersions := list
+    "python3.11"
+    "python3.11-dev"
+    "python3.12"
+    "python3.12-dev"
+    "python3.12-distutils"
+    "python3.13"
+    "python3.13-dev"
+    "python3.13-nogil" -}}
+
+
+sudo apt-get install --yes --no-install-recommends {{ $pythonVersions | join " " }}
