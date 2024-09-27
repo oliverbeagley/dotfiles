@@ -1,0 +1,77 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "[r]": {
+        "editor.defaultFormatter": "REditorSupport.r",
+        "editor.formatOnSave": true,
+        "editor.rulers": [
+            120
+        ],
+        "editor.tabSize": 2
+    },
+    "[rmd]": {
+        "editor.defaultFormatter": "REditorSupport.r",
+        "editor.formatOnSave": true
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "editor.codeActionsOnSave": [
+        "source.organizeImports"
+    ],
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.largeFileOptimizations": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.rulers": [
+        88
+    ],
+    "evenBetterToml.formatter.alignComments": true,
+    "evenBetterToml.formatter.allowedBlankLines": 10,
+    "evenBetterToml.formatter.arrayAutoCollapse": false,
+    "evenBetterToml.formatter.arrayAutoExpand": false,
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "venv/**": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.watcherExclude": {
+        "venv/**": true
+    },
+    "git.mergeEditor": true,
+    "github.copilot.advanced": {},
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": false,
+        "plaintext": false,
+        "scminput": false
+    },
+    "interactiveWindow.executeWithShiftEnter": true,
+    "markdown.extension.list.indentationSize": "inherit",
+    "mypy-type-checker.importStrategy": "fromEnvironment",
+    "mypy-type-checker.preferDaemon": true,
+    "mypy-type-checker.reportingScope": "workspace",
+    "python.analysis.extraPaths": [],
+    "r.lsp.debug": true,
+    "r.lsp.diagnostics": true,
+    "r.lsp.enabled": true,
+    "r.session.watchGlobalEnvironment": true,
+    "r.sessionWatcher": true,
+    "rainbow_csv.csv_lint_detect_trailing_spaces": true,
+    "ruff.importStrategy": "fromEnvironment",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+}
