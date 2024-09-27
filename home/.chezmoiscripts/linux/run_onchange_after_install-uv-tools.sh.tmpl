@@ -11,6 +11,7 @@ set -eufo pipefail
 
 {{- range $tools }}
 
+PATH=$PATH:$HOME/.local/bin
 uv tool install {{ . }}
 
 {{- end }}
