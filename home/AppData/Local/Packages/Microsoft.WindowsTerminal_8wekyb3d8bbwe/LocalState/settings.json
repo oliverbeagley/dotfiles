@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -20,8 +18,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -34,26 +31,30 @@
     "defaultProfile": "{77bd268e-8cc9-4d38-8e90-c278219ad1d6}",
     "initialCols": 120,
     "initialRows": 50,
-    "newTabMenu": 
-    [
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "bellStyle": "none",
             "colorScheme": "Solarized Dark",
-            "font": 
-            {
+            "font": {
                 "face": "FiraCode Nerd Font Mono"
             }
         },
-        "list": 
-        [
+        "list": [
             {
+                "commandline": "C:\\Windows\\system32\\wsl.exe -d Ubuntu-24.04",
+                "guid": "{77bd268e-8cc9-4d38-8e90-c278219ad1d6}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Ubuntu",
+                "startingDirectory": "~"
+            },
+            {
+                "colorScheme": "Campbell",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
@@ -70,19 +71,10 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "commandline": "C:\\Windows\\system32\\wsl.exe -d Ubuntu-24.04",
-                "guid": "{77bd268e-8cc9-4d38-8e90-c278219ad1d6}",
-                "hidden": false,
-                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-                "name": "Ubuntu",
-                "startingDirectory": "~"
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",

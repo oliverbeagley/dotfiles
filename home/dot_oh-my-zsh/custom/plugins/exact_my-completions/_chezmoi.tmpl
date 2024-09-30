@@ -1,0 +1,4 @@
+{{- $bin := lookPath "chezmoi" -}}
+{{- if $bin -}}
+{{- output $bin "completion" "zsh" -}}
+{{- end -}}
