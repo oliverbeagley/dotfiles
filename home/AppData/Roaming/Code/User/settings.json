@@ -42,6 +42,7 @@
     "evenBetterToml.formatter.allowedBlankLines": 10,
     "evenBetterToml.formatter.arrayAutoCollapse": false,
     "evenBetterToml.formatter.arrayAutoExpand": false,
+    "explorer.confirmDragAndDrop": false,
     "files.autoSave": "onFocusChange",
     "files.exclude": {
         "venv/**": true
