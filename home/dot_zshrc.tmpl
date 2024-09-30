@@ -40,8 +40,9 @@ fpath+=~/.zfunc
 # azure cli only provide bash completions
 autoload -U +X bashcompinit && bashcompinit
 
-#
+
 eval "$(aactivator init)"
+eval $(thefuck --alias)
 
 fif() {
   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for"; return 1; fi

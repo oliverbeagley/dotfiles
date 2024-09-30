@@ -6,7 +6,6 @@ set -eufo pipefail
 {{ $tools := list
     "pre-commit"
     "ruff"
-    "thefuck"
     "hatch" -}}
 
 {{- range $tools }}
@@ -15,3 +14,7 @@ PATH=$PATH:$HOME/.local/bin
 uv tool install {{ . }}
 
 {{- end }}
+
+
+# thefuck doesn't work on python3.12
+uv tool install thefuck --python python3.11 --with setuptools --with importlib

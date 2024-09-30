@@ -1,0 +1,4 @@
+{{- $bin := lookPath "uv" -}}
+{{- if $bin -}}
+{{- output $bin "generate-shell-completion" "zsh" -}}
+{{- end -}}
