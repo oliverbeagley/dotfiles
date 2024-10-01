@@ -97,7 +97,7 @@ stripComponents = 1
     "Uninstall-Font.ps1") }}
 [".local/share/{{ . }}"]
 type = "archive-file"
-url = {{ toJson (gitHubLatestTag "ralish/PSWinGlue" ).TarballURL }}
+url = {{ (gitHubLatestTag "ralish/PSWinGlue").TarballURL | trim | quote }}
 refreshPeriod = "168h"
 stripComponents = 1
 path = "Scripts/{{ . }}"
