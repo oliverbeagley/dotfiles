@@ -17,7 +17,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # this must be after omz
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME}/ohmyposh/config.toml)"
 
 alias eza='eza --icons=auto'
 alias ezal='eza --long --git'
@@ -27,9 +27,6 @@ alias bat="batcat"
 alias cat='bat'
 alias ls='eza'
 alias vim='nvim'
-
-export BAT_THEME="Solarized (dark)"
-
 
 # Because ripgrep doesn't look for config in the proper place
 export RIPGREP_CONFIG_PATH=${XDG_CONFIG_HOME}/ripgrep/config
