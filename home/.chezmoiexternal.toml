@@ -91,3 +91,14 @@ type = "archive"
 url = {{ gitHubLatestReleaseAssetURL "neovim/neovim" "nvim-linux64.tar.gz" | quote }}
 refreshPeriod = "168h"
 stripComponents = 1
+
+{{- range (list
+    "Install-Font.ps1"
+    "Uninstall-Font.ps1") }}
+[".local/share/{{ . }}"]
+type = "archive-file"
+url = {{ toJson (gitHubLatestTag "ralish/PSWinGlue" ).TarballURL }}
+refreshPeriod = "168h"
+stripComponents = 1
+path = "Scripts/{{ . }}"
+{{- end }}

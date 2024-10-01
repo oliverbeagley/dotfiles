@@ -26,11 +26,12 @@
             "keys": "alt+shift+d"
         }
     ],
+    "centerOnLaunch": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{77bd268e-8cc9-4d38-8e90-c278219ad1d6}",
     "initialCols": 120,
-    "initialRows": 50,
+    "initialRows": 40,
     "newTabMenu": [
         {
             "type": "remainingProfiles"
