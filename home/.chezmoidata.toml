@@ -1,6 +1,11 @@
-zshPlugins = [
-    "git",
-    "zsh-syntax-highlighting",
-    "thefuck",
-    "my-completions",
+[zsh_plugins]
+personal = [
+  "git",
+  "zsh-syntax-highlighting",
+  "thefuck",
+  "my-completions",
+]
+work = [
+  "azure",
+  "kubectl",
 ]

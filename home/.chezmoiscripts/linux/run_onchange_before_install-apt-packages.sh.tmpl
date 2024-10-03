@@ -10,6 +10,9 @@ set -eufo pipefail
     "ripgrep"
     "zsh" -}}
 
+# neovim dependencies
+{{ $packages :=  concat $packages (list "make" "unzip") -}}
+
 
 sudo add-apt-repository --yes --no-update ppa:git-core/ppa
 sudo add-apt-repository --yes --no-update ppa:deadsnakes/ppa
