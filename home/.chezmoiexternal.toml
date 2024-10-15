@@ -111,5 +111,5 @@ url = {{ gitHubLatestReleaseAssetURL "databricks/cli" (printf "databricks_cli_*_
 refreshPeriod = "168h"
 exact = true
 executable = true
-path = "databricks"
+path = "databricks{{ if eq .chezmoi.os "windows" }}.exe{{ end }}"
 {{- end }}
