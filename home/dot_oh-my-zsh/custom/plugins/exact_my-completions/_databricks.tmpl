@@ -1,0 +1,6 @@
+{{- if not .personal -}}
+{{-   $bin := lookPath "databricks" -}}
+{{-   if $bin -}}
+{{-     output $bin "completion" "zsh" -}}
+{{-   end -}}
+{{- end -}}

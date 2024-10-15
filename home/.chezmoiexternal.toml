@@ -101,3 +101,15 @@ refreshPeriod = "168h"
 stripComponents = 1
 path = "Scripts/{{ . }}"
 {{- end }}
+
+
+# TODO: Should probably separate out into different file
+{{- if not .personal }}
+[".local/bin/databricks"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "databricks/cli" (printf "databricks_cli_*_%s_%s.zip" .chezmoi.os .chezmoi.arch) | quote }}
+refreshPeriod = "168h"
+exact = true
+executable = true
+path = "databricks"
+{{- end }}
