@@ -15,6 +15,14 @@
 [credential]
 	helper = store
 
+[credential "https://50335017%2boliverbeagley%40users.noreply.github.com@github.com"]
+	username = 50335017%2boliverbeagley%40users.noreply.github.com
+
+{{ if not .personal -}}
+[credential "https://oliver.beagley%40puregym.com@github.com"]
+	username = oliver.beagley%40puregym.com
+{{- end }}
+
 [fetch]
 	prune = true
 

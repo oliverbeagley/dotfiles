@@ -3,3 +3,6 @@
 # aactivator scripts
 .activate.sh
 .deactivate.sh
+
+# scratch files
+t.py

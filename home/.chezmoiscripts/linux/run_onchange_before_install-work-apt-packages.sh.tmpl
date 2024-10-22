@@ -2,15 +2,19 @@
 #! /bin/bash
 set -eufo pipefail
 
-curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor --yes --output /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+CURL_OPTS=(--fail --silent --show-error --location)
+
+# kubernetes
+curl "${CURL_OPTS[@]}" https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor --yes --output /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
 
-curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor --yes --output /etc/apt/keyrings/microsoft.gpg
+# MSFT - currently azure-cli
+curl "${CURL_OPTS[@]}" https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor --yes --output /etc/apt/keyrings/microsoft.gpg
 sudo chmod 644 /etc/apt/keyrings/microsoft.gpg
 
-AZ_DIST=$(lsb_release -cs)
+AZ_DIST=$(lsb_release --codename --short)
 echo "Types: deb
 URIs: https://packages.microsoft.com/repos/azure-cli/
 Suites: ${AZ_DIST}
@@ -18,7 +22,11 @@ Components: main
 Architectures: $(dpkg --print-architecture)
 Signed-by: /etc/apt/keyrings/microsoft.gpg" | sudo tee /etc/apt/sources.list.d/azure-cli.sources
 
+# R
+curl "${CURL_OPTS[@]}" https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+
+# install
 sudo apt-get update
-sudo apt-get install --yes --no-install-recommends kubectl azure-cli
+sudo apt-get install --yes --no-install-recommends kubectl azure-cli r-base
 
 {{ end -}}

@@ -1,0 +1,8 @@
+{{- if not .personal -}}
+#! /bin/bash
+set -eufo pipefail
+
+# This presumes I am the only one on this machine otherwise it is a security risk
+sudo chmod o+w /usr/local/lib/R/site-library
+
+{{ end -}}

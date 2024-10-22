@@ -1,0 +1,6 @@
+options(
+  # set user agent for posit package manager to install binaries
+  HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(), R.version["platform"], R.version["arch"], R.version["os"])),
+  # set posit package manager url
+  repos = c(PPM = sprintf("https://p3m.dev/cran/__linux__/%s/latest", system("lsb_release --codename --short", intern = TRUE)))
+)

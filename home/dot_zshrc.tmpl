@@ -4,9 +4,33 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 
 export PATH="$PATH:/home/olly/.local/bin"
+
+join() {
+  local IFS="$1"
+  shift
+  echo "$*"
+}
+
+WSL_PATHS_ARR=(
+  "/mnt/c/ProgramData/chocolatey/bin"
+  "/mnt/c/Users/Oliver.Beagley/AppData/Local/Programs/Microsoft VS Code/bin"
+  "/mnt/c/Program Files/Docker/Docker/resources/bin"
+)
+WSL_PATH=$(join ':' ${WSL_PATHS_ARR[@]})
+export PATH="$PATH:${WSL_PATH}"
+
 export EDITOR=vim
 
 export ZSH="$HOME/.oh-my-zsh"
+
+{{ if not .personal -}}
+
+# Work related env ars
+export R_HOME_USER="$XDG_CONFIG_HOME/R"
+export R_PROFILE_USER="$XDG_CONFIG_HOME/R/profile"
+export R_HISTFILE="$XDG_CONFIG_HOME/R/history"
+
+{{- end }}
 
 {{ $plugins := .zsh_plugins.personal -}}
 {{ if not .personal -}}
