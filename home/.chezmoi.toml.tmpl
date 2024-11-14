@@ -3,3 +3,9 @@
 [data]
 email = {{ $email | quote }}
 personal = {{ hasSuffix "gmail.com" $email }}
+
+{{ if eq .chezmoi.os "windows"}}
+[cd]
+command = "powershell.exe"
+
+{{ end }}
