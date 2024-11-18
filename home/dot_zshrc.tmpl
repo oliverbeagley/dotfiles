@@ -19,7 +19,8 @@ WSL_PATHS_ARR=(
 WSL_PATH=$(join ':' ${WSL_PATHS_ARR[@]})
 export PATH="$PATH:${WSL_PATH}"
 
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR="${VISUAL}"
 
 export ZSH="$HOME/.oh-my-zsh"
 
