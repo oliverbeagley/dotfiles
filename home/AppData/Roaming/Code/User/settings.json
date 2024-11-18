@@ -38,6 +38,22 @@
     "editor.rulers": [
         88
     ],
+    "editor.tokenColorCustomizations": {
+        "[Tokyo Night]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "string.quoted.docstring.multi.python",
+                        "punctuation.definition.string.begin.python",
+                        "punctuation.definition.string.end.python",
+                    ],
+                    "settings": {
+                        "foreground": "#E0AF68"
+                    }
+                },
+            ]
+        }
+    },
     "evenBetterToml.formatter.alignComments": true,
     "evenBetterToml.formatter.allowedBlankLines": 10,
     "evenBetterToml.formatter.arrayAutoCollapse": false,
@@ -75,4 +91,5 @@
     "rainbow_csv.csv_lint_detect_trailing_spaces": true,
     "ruff.importStrategy": "fromEnvironment",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "workbench.colorTheme": "Tokyo Night",
 }
