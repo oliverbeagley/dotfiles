@@ -43,7 +43,7 @@ foreground_templates = [
     "lightBlue",
 ]
 background = 'transparent'
-template = " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}±{{ end }}{{ if .Staging.Changed }}✚{{ end }} "
+template = " {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}±{{ end }}{{ if .Staging.Changed }}✚{{ end }} "
 
 
 [blocks.segments.properties]
@@ -87,15 +87,15 @@ newline = true
 type = 'text'
 style = 'plain'
 foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}magenta{{end}}",
+    "{{ if gt .Code 0 }}red{{ end }}",
+    "{{ if eq .Code 0 }}magenta{{ end }}",
 ]
 template = '❯'
 
 [transient_prompt]
 foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}magenta{{end}}",
+    "{{ if gt .Code 0 }}red{{ end }}",
+    "{{ if eq .Code 0 }}magenta{{ end }}",
 ]
 foreground = "white"
 template = '❯ '
