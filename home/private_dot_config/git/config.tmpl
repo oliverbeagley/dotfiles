@@ -7,7 +7,7 @@
 
 [core]
 	whitespace = trailing-space,space-before-tab
-	autocrlf = {{ if eq .chezmoi.os "windows" }}true{{ else }}input{{ end }}
+	autocrlf = {{ if eq .chezmoi.os "windows" }}true{{ else }}false{{ end }}
 
 [color]
 	ui = auto
