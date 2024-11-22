@@ -29,6 +29,15 @@
     "editor.codeActionsOnSave": [
         "source.organizeImports"
     ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+            "name": "custom-dictionary-user",
+            "path": "~/.config/cspell/custom-dictionary-user.txt",
+            "addWords": true,
+            "scope": "user"
+        }
+    },
+    "cSpell.language": "en-GB",
     "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.fontLigatures": true,
     "editor.formatOnSave": true,
