@@ -16,7 +16,7 @@ WSL_USERNAME=$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe '[S
 WSL_PATHS_ARR=(
   "/mnt/c/ProgramData/chocolatey/bin"
   "/mnt/c/Program Files/Docker/Docker/resources/bin"
-  "/mnt/c/Users/${WSL_USERNAME}/AppData/Local/Programs/Microsoft VS Code/bin"
+  "/mnt/c/Users/$(echo $WSL_USERNAME | sed -e 's/\r$//')/AppData/Local/Programs/Microsoft VS Code/bin"
   "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
 )
 WSL_PATH=$(join ':' ${WSL_PATHS_ARR[@]})
