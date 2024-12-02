@@ -11,10 +11,13 @@ join() {
   echo "$*"
 }
 
+
+WSL_USERNAME=$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe '[System.Security.Principal.WindowsIdentity]::GetCurrent().Name.Split("\")[1]')
 WSL_PATHS_ARR=(
   "/mnt/c/ProgramData/chocolatey/bin"
-  "/mnt/c/Users/Oliver.Beagley/AppData/Local/Programs/Microsoft VS Code/bin"
   "/mnt/c/Program Files/Docker/Docker/resources/bin"
+  "/mnt/c/Users/${WSL_USERNAME}/AppData/Local/Programs/Microsoft VS Code/bin"
+  "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
 )
 WSL_PATH=$(join ':' ${WSL_PATHS_ARR[@]})
 export PATH="$PATH:${WSL_PATH}"
