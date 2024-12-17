@@ -74,6 +74,18 @@ stripComponents = 1
 path = "aactivator.py"
 
 
+{{ range (list
+    "pay-respects"
+    "_pay-respects-fallback-100-request-ai"
+    "_pay-respects-module-100-runtime-rules") }}
+[".local/bin/{{ . }}"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "iffse/pay-respects" "pay-respects-*-x86_64-unknown-linux-gnu.tar.zst" | quote }}
+refreshPeriod = "168h"
+path = "{{ . }}"
+{{ end }}
+
+
 # TODO: make this works for windows too
 {{ if ne .chezmoi.os "windows" }}
 [".local/bin/oh-my-posh"]

@@ -2,7 +2,6 @@
 personal = [
   "git",
   "zsh-syntax-highlighting",
-  "thefuck",
   "my-completions",
 ]
 work = [
