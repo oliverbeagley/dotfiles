@@ -66,7 +66,7 @@ zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
 eval "$(aactivator init)"
-eval "$(pay-respects zsh --alias fuck)"
+eval "$(pay-respects zsh --alias fuck --nocnf)"
 
 fif() {
   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for"; return 1; fi
