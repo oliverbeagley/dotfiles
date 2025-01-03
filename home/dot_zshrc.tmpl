@@ -10,11 +10,18 @@ join() {
   shift
   echo "$*"
 }
-{{ $wsl_username := output "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe" `[System.Security.Principal.WindowsIdentity]::GetCurrent().Name.Split('\')[1]` | trim -}}
+{{- $wsl_username := "" }}
+{{- if eq .chezmoi.os "windows" }}
+  {{ $wsl_username = .chezmoi.user | splitList `\` | last }}
+{{ else }}
+  {{ $wsl_username = output "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe" `[System.Security.Principal.WindowsIdentity]::GetCurrent().Name.Split('\')[1]` | trim }}
+{{- end }}
 WSL_PATHS_ARR=(
   "/mnt/c/ProgramData/chocolatey/bin"
   "/mnt/c/Program Files/Docker/Docker/resources/bin"
+{{- if ne $wsl_username "" }}
   "/mnt/c/Users/{{ $wsl_username }}/AppData/Local/Programs/Microsoft VS Code/bin"
+{{- end }}
   "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
 )
 WSL_PATH=$(join ':' ${WSL_PATHS_ARR[@]})
