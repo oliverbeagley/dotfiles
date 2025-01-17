@@ -79,6 +79,7 @@
         "venv/**": true
     },
     "git.mergeEditor": true,
+    "git.openRepositoryInParentFolders": "always",
     "github.copilot.advanced": {},
     "github.copilot.enable": {
         "*": true,
@@ -98,6 +99,7 @@
     "r.session.watchGlobalEnvironment": true,
     "r.sessionWatcher": true,
     "rainbow_csv.csv_lint_detect_trailing_spaces": true,
+    "remote.autoForwardPortsSource": "hybrid",
     "ruff.importStrategy": "fromEnvironment",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "workbench.colorTheme": "Tokyo Night",
