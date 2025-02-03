@@ -23,6 +23,12 @@
         "editor.defaultFormatter": "REditorSupport.r",
         "editor.formatOnSave": true
     },
+    "[sql]": {
+        "editor.tabSize": 2,
+        "editor.rulers": [
+            80
+        ],
+    },
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
