@@ -80,7 +80,7 @@ path = "aactivator.py"
     "_pay-respects-module-100-runtime-rules") }}
 [".local/bin/{{ . }}"]
 type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "iffse/pay-respects" "pay-respects-*-x86_64-unknown-linux-gnu.tar.zst" | quote }}
+url = {{ gitHubLatestReleaseAssetURL "iffse/pay-respects" "pay-respects-*-x86_64-unknown-linux-musl.tar.zst" | quote }}
 refreshPeriod = "168h"
 path = "{{ . }}"
 {{ end }}
