@@ -22,6 +22,7 @@ WSL_PATHS_ARR=(
 {{- if ne $wsl_username "" }}
   "/mnt/c/Users/{{ $wsl_username }}/AppData/Local/Programs/Microsoft VS Code/bin"
 {{- end }}
+  "/mnt/c/Program Files/Microsoft VS Code/bin"
   "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
 )
 WSL_PATH=$(join ':' ${WSL_PATHS_ARR[@]})
