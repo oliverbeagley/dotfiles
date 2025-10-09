@@ -93,6 +93,8 @@
         "plaintext": false,
         "scminput": false
     },
+    "http.proxyStrictSSL": false,
+    "http.proxySupport": "on",
     "interactiveWindow.executeWithShiftEnter": true,
     "markdown.extension.list.indentationSize": "inherit",
     "mypy-type-checker.importStrategy": "fromEnvironment",
@@ -109,4 +111,9 @@
     "ruff.importStrategy": "fromEnvironment",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "workbench.colorTheme": "Tokyo Night",
+    "workbench.colorCustomizations": {
+        "minimapSlider.background": "#484f5888",
+        "minimapSlider.hoverBackground": "#484f5888",
+        "minimapSlider.activeBackground": "#484f5888"
+    },
 }
