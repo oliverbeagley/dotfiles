@@ -29,7 +29,10 @@ sudo apt-get install --yes --no-install-recommends {{ $packages | join " " }}
     "python3.12-dev"
     "python3.13"
     "python3.13-dev"
-    "python3.13-nogil" -}}
+    "python3.13-nogil"
+    "python3.14"
+    "python3.14-dev"
+    "python3.14-nogil" -}}
 
 
 sudo apt-get install --yes --no-install-recommends {{ $pythonVersions | join " " }}
