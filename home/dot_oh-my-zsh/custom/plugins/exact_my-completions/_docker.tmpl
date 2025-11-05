@@ -1,0 +1,4 @@
+{{- $bin := lookPath "docker" -}}
+{{- if $bin -}}
+{{-   output $bin "completion" "zsh" -}}
+{{- end -}}
