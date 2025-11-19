@@ -74,6 +74,13 @@ stripComponents = 1
 path = "aactivator.py"
 
 
+[".local/bin/fzf"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "junegunn/fzf" (printf "fzf-*-%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
+refreshPeriod = "168h"
+path = "fzf"
+
+
 {{ range (list
     "pay-respects"
     "_pay-respects-fallback-100-request-ai"

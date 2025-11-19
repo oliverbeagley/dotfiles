@@ -3,6 +3,7 @@ personal = [
   "git",
   "zsh-syntax-highlighting",
   "my-completions",
+  "zoxide",
 ]
 work = [
   "azure",
