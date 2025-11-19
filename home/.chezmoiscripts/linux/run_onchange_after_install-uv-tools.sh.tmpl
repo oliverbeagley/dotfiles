@@ -2,6 +2,8 @@
 
 set -eufo pipefail
 
+# This will run at most once a week
+# {{ output "date" "+%V" | trim }}
 
 {{ $tools := list
     "ruff"
