@@ -8,3 +8,7 @@
 t.*
 
 .env
+
+# output folders
+out
+logs
