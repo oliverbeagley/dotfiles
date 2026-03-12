@@ -1,4 +1,16 @@
 {
+    "[csv]": {
+        "editor.inlayHints.maximumLength": 0
+    },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
@@ -32,9 +44,12 @@
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
-    "editor.codeActionsOnSave": [
-        "source.organizeImports"
-    ],
+    "azureTerraform.survey": {
+        "surveyPromptDate": "2026-01-28T08:49:22.163Z",
+        "surveyPromptIgnoredCount": 1
+    },
+    "claudeCode.environmentVariables": [],
+    "claudeCode.preferredLocation": "panel",
     "cSpell.customDictionaries": {
         "custom-dictionary-user": {
             "name": "custom-dictionary-user",
@@ -44,10 +59,14 @@
         }
     },
     "cSpell.language": "en-GB",
+    "editor.codeActionsOnSave": [
+        "source.organizeImports"
+    ],
     "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.fontLigatures": true,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.largeFileOptimizations": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.rulers": [
@@ -65,7 +84,7 @@
                     "settings": {
                         "foreground": "#E0AF68"
                     }
-                },
+                }
             ]
         }
     },
@@ -84,6 +103,7 @@
     "files.watcherExclude": {
         "venv/**": true
     },
+    "git.autofetch": true,
     "git.mergeEditor": true,
     "git.openRepositoryInParentFolders": "always",
     "github.copilot.advanced": {},
@@ -101,6 +121,8 @@
     "mypy-type-checker.preferDaemon": true,
     "mypy-type-checker.reportingScope": "workspace",
     "python.analysis.extraPaths": [],
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.variableTypes": true,
     "r.lsp.debug": true,
     "r.lsp.diagnostics": true,
     "r.lsp.enabled": true,
@@ -110,10 +132,11 @@
     "remote.autoForwardPortsSource": "hybrid",
     "ruff.importStrategy": "fromEnvironment",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-    "workbench.colorTheme": "Tokyo Night",
+    "terminal.integrated.suggest.enabled": false,
     "workbench.colorCustomizations": {
         "minimapSlider.background": "#484f5888",
         "minimapSlider.hoverBackground": "#484f5888",
         "minimapSlider.activeBackground": "#484f5888"
     },
+    "workbench.colorTheme": "Tokyo Night"
 }
